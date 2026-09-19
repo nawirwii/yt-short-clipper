@@ -429,32 +429,25 @@ export function ProcessConfirmDialog({ clipCount, captionsAvailable = true, onCo
             )}
 
               {/* Credit watermark toggle & text input */}
-              <div className="space-y-2">
-                <div
-                  className="flex items-center justify-between gap-3 p-3 rounded-[var(--radius-sm)] bg-[var(--color-bg-secondary)]"
-                >
-                  <div className="flex items-center gap-3 min-w-0 flex-1">
-                    <User className="w-5 h-5 text-[var(--color-accent)] shrink-0" />
-                    <div className="min-w-0">
-                      <p className="text-sm font-medium text-[var(--color-text-primary)]">
-                        Credit Text
-                      </p>
-                      <p className="text-xs text-[var(--color-text-muted)] truncate">
-                        Source channel credit overlay
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 w-full">
-                    <Switch checked={addCreditWatermark} onCheckedChange={setAddCreditWatermark} />
-                    <input
-                      value={creditText}
-                      onChange={(e) => setCreditText(e.target.value)}
-                      disabled={!addCreditWatermark}
-                      className="flex-1 px-3 py-2 text-sm bg-[var(--color-bg-secondary)] rounded-[var(--radius-sm)] border border-[var(--color-border-light)] focus:outline-none focus:border-[var(--color-accent)] disabled:bg-[var(--color-bg-muted)]"
-                      placeholder="e.g. Source: {channel}"
-                    />
+              <div className="flex items-center justify-between gap-3 p-3 rounded-[var(--radius-sm)] bg-[var(--color-bg-secondary)]">
+                <div className="flex items-center gap-3 min-w-0 flex-1">
+                  <User className="w-5 h-5 text-[var(--color-accent)] shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-[var(--color-text-primary)]">Credit</p>
+                    <p className="text-xs text-[var(--color-text-muted)] truncate">Source channel credit overlay</p>
                   </div>
                 </div>
+                <div className="flex items-center gap-2 w-full max-w-xs">
+                  <Switch checked={addCreditWatermark} onCheckedChange={setAddCreditWatermark} />
+                  <input
+                    value={creditText}
+                    onChange={(e) => setCreditText(e.target.value)}
+                    disabled={!addCreditWatermark}
+                    className="flex-1 px-3 py-2 text-sm bg-[var(--color-bg-secondary)] rounded-[var(--radius-sm)] border border-[var(--color-border-light)] focus:outline-none focus:border-[var(--color-accent)] disabled:bg-[var(--color-bg-muted)]"
+                    placeholder="e.g. Source: {channel}"
+                  />
+                </div>
+              </div>
 
               {/* Caption style selector (only if captions enabled) */}
               {addCaptions && (
@@ -480,7 +473,6 @@ export function ProcessConfirmDialog({ clipCount, captionsAvailable = true, onCo
                   </div>
                 </div>
               )}
-            </div>
 
             <div className="space-y-2">
               {options.filter(o => o.key !== "addCreditWatermark").map((opt) => (

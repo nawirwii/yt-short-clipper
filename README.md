@@ -1,62 +1,25 @@
-# yt-short-clipper v2
+# yt‑short‑clipper
 
-Desktop app that turns long-form YouTube videos into 9:16 short-form clips, with AI highlight detection, face-tracking reframe, and word-by-word captions.
+A lightweight Tauri‑based tool for clipping YouTube videos with AI‑enhanced highlights, watermarks, captions, and split‑screen support.
+
+---
 
 ## Latest Release
 
-- **Version:** 2.0.35-beta (see [CHANGELOG](./CHANGELOG.md))
-- **License:** MIT
-- **Repository:** https://github.com/jipraks/yt-short-clipper
+**Version:** `v2.0.41`  
+**Published:** *(not released yet)*  
+**Tag:** `v2.0.41`
 
-## Features
+**Assets:**
+- *(no assets uploaded – release pending)*
 
-- AI-powered highlight detection (YouTube heatmap / LLM)
-- Face‑tracking portrait reframing (MediaPipe) – top pane 80 % of 9:16 frame
-- Split‑screen layout: portrait main video (80 %) + lenskep/webcam preview (20 %)
-- Word‑by‑word captions (Whisper‑based)
-- Dark theme `#0c0c1c` with gold/emerald accents, Space Grotesk + DM Sans fonts
-- Portable Windows build (Tauri + PyInstaller sidecar)
+> This release will include the latest GPU‑detection improvements, watermark fixes, and credit‑text positioning.
 
-## Build & Release
-
-See the skill `yt-short-clipper` for detailed steps:
-
-```bash
-# Install dependencies
-npm run deps
-
-# Build sidecar (Windows PowerShell required)
-npm run build:sidecar
-
-# Build frontend
-npm run build
-
-# Build Tauri binary
-npm run tauri build
-
-# Package portable zip
-npm run package
-```
-
-Or run the full release pipeline:
-
-```bash
-npm run release
-```
+---
 
 ## Development
 
-```bash
-npm run dev   # Vite dev server
-```
+- **Branch:** `gh-action-build` (continuous‑integration builds)  
+- **Latest tag:** `v2.0.41` (not yet released)
 
-## Changelog
-
-Full changelog is available in [CHANGELOG.md](./CHANGELOG.md).
-
-## Contributing
-
-Feel free to open issues or submit pull requests. Please follow the existing code style and add tests where applicable.
-
----
-*Built with ❤️ dari Nawir_satria Baubau*
+Run `npm ci && npm run tauri build` to produce local builds.
